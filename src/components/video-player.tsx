@@ -24,11 +24,18 @@ export function VideoPlayer({ src }: VideoPlayerProps) {
   }
 
   return (
-    <div className="w-full h-full bg-black">
-      <video className="w-full h-full" controls>
-        <source src={src} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+    <div className="w-full h-full bg-black text-white">
+      <div className="w-full h-full flex items-center justify-center" >
+        <div className='inline'>
+          <h1 className='text-xl mb-4'>Welcome to the EPIC: The Musical video player</h1>
+          <p className='text-lg mb-4'>Select a video on the right -&gt;&gt;</p>
+          <p>
+            Songs by <a className='underline' href="https://www.epicthemusical.com/">Jorge Rivera-Herrans</a><br/>
+            With videos from the community<br/>
+            <a className='underline' target='_blank' href='https://github.com/spidfire/epic-player'>Github code</a>
+          </p>
+        </div>
+      </div>
     </div>
   )
 }

@@ -70,9 +70,11 @@ export function Sidebar({ chapters, activeChapter, activeVariation, onSelectVari
 
   return (
     <ScrollArea className="h-full">
-      <input type="text" className="w-full p-2 mb-4" placeholder="Search..." value={search} onChange={(e) => setSearch(e.target.value)} />
+      <input type="text" className="w-full p-2 mb-1" placeholder="Search..." value={search} onChange={(e) => setSearch(e.target.value)} />
+      
       <div className="p-4 pr-8"> {/* Added right padding to accommodate scrollbar */}
-        <h2 className="text-2xl font-bold mb-6">Epic: the Musical</h2>
+        <h2 className="text-2xl font-bold ">Epic: the Musical</h2>
+        <a className='underline mb-6' target='_blank'  href='https://github.com/spidfire/epic-player'>Github & submit songs</a>
         {items}
       </div>
     </ScrollArea>

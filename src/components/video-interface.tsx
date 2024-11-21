@@ -65,7 +65,7 @@ export function VideoInterface() {
       <div className="flex-grow">
         <VideoPlayer src={videoSrc} />
       </div>
-      <div className="w-96 border-l">
+      <div className="w-96 border-l bg-black text-white">
         <Sidebar
           chapters={sortedChapters}
           activeChapter={activeChapter}

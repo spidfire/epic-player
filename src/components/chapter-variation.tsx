@@ -38,7 +38,6 @@ export function ChapterVariation({ title, thumbnailSrc, author, startTime, endTi
           <div className="space-y-1">
             <h4 className="text-sm font-semibold">{title}</h4>
             <p className="text-sm">Author: {author}</p>
-            <p className="text-sm">Duration: {startTime} - {endTime}</p>
           </div>
         </div>
       </HoverCardContent>
