@@ -1,5 +1,4 @@
 import React from 'react'
-import Image from 'next/image'
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card"
 
 interface ChapterVariationProps {

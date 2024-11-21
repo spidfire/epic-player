@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 import { VideoPlayer } from './video-player'
-import { Sidebar } from './sidebar'
+import { ChapterData, Sidebar } from './sidebar'
 import chaptersData from './chaptersData.json'
 
 // Sample data structure with thumbnail sources, author, and time information
@@ -24,11 +24,11 @@ export function VideoInterface() {
   }
 
   
-  let [sortedChapters, updateChapters] = useState([]);
+  const [sortedChapters, updateChapters] = useState<ChapterData[]>([]);
   useEffect(() => {
     if (window) { 
-      let sessionStorage = window.sessionStorage
-      var seedData = sessionStorage.getItem("seed");
+      const sessionStorage = window.sessionStorage
+      let seedData = sessionStorage.getItem("seed");
       if(!seedData){
         const seedgen = () => (Math.random()*2**32)>>>0;
         seedData =  JSON.stringify([
@@ -39,10 +39,10 @@ export function VideoInterface() {
         ])
         sessionStorage.setItem("seed", seedData)
       }
-      var seed = JSON.parse(seedData)
+      const seed = JSON.parse(seedData)
       const getRand = sfc32(seed[0], seed[1], seed[2], seed[3]);
       
-      let sortOnId = (a: {id: string}, b: {id: string}) => {
+      const sortOnId = (a: {id: string}, b: {id: string}) => {
         if(a.id < b.id){
           return -1;
         }else if(a.id > b.id){
@@ -54,7 +54,8 @@ export function VideoInterface() {
       for (let i = 0; i < chaptersData.length; i++) {
         chaptersData[i].variations = chaptersData[i].variations.sort(sortOnId).map(value => ({ ...value, sort: getRand() }))
       }
-      updateChapters(chaptersData)
+      const sorted = chaptersData as unknown as ChapterData[];
+      updateChapters(sorted)
     }
 }, []);
   
@@ -80,7 +81,7 @@ export function VideoInterface() {
 function sfc32(a: number, b: number, c: number, d: number) {
   return function() {
     a |= 0; b |= 0; c |= 0; d |= 0;
-    let t = (a + b | 0) + d | 0;
+    const t = (a + b | 0) + d | 0;
     d = d + 1 | 0;
     a = b ^ b >>> 9;
     b = c + (c << 3) | 0;

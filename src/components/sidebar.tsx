@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Chapter } from './chapter'
 import { ScrollArea } from "@/components/ui/scroll-area"
 
-interface ChapterData {
+export interface ChapterData {
   id: string
   title: string
   saga: string
@@ -26,10 +26,10 @@ interface SidebarProps {
 }
 
 export function Sidebar({ chapters, activeChapter, activeVariation, onSelectVariation }: SidebarProps) {
-  var saga = "";
+  let saga = "";
 
-  let [search, setSearch] = useState("");
-  let [chapterData, setChapterData] = useState<ChapterData[]>([]);
+  const [search, setSearch] = useState("");
+  const [chapterData, setChapterData] = useState<ChapterData[]>([]);
   
   useEffect(() => {
       
@@ -48,9 +48,9 @@ export function Sidebar({ chapters, activeChapter, activeVariation, onSelectVari
     }));
   }, [search, chapters]);
 
-  var items =  [];
-  for(var chapter of chapterData){  
-    let chapterid = chapter.id;
+  const items =  [];
+  for(const chapter of chapterData){  
+    const chapterid = chapter.id;
     if(chapter.saga !== saga){
       items.push(<h2 key={chapter.saga} className="text-2xl font-bold  mb-0 mt-6">{chapter.saga}</h2>)
       saga = chapter.saga;

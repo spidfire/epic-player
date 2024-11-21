@@ -5,51 +5,6 @@
     "title": "The Horse And The Infant",
     "variations": [
       {
-        "id": "v1",
-        "title": "The Horse and The Infant + Just a Man | EPIC: The Musical Animatics",
-        "youtube": "https://www.youtube.com/watch?v=QXeYVV1zcUc",
-        "description": "If you somehow didn't know these two animatics were originally made last year with the old recordings of the song. I decided to ...",
-        "publishTime": "2024-07-30T21:53:06Z",
-        "thumbnailSmall": "https://i.ytimg.com/vi/QXeYVV1zcUc/default.jpg",
-        "thumbnailSrc": "https://i.ytimg.com/vi/QXeYVV1zcUc/hqdefault.jpg",
-        "author": "gigi",
-        "channelId": "UCATyAt5rU_CIPoecqGRvrRg",
-        "youtubeData": {
-          "kind": "youtube#searchResult",
-          "etag": "_WJMggsE1em93n_qs2tSjtVAQOQ",
-          "id": {
-            "kind": "youtube#video",
-            "videoId": "QXeYVV1zcUc"
-          },
-          "snippet": {
-            "publishedAt": "2024-07-30T21:53:06Z",
-            "channelId": "UCATyAt5rU_CIPoecqGRvrRg",
-            "title": "The Horse and The Infant + Just a Man | EPIC: The Musical Animatics",
-            "description": "If you somehow didn't know these two animatics were originally made last year with the old recordings of the song. I decided to ...",
-            "thumbnails": {
-              "default": {
-                "url": "https://i.ytimg.com/vi/QXeYVV1zcUc/default.jpg",
-                "width": 120,
-                "height": 90
-              },
-              "medium": {
-                "url": "https://i.ytimg.com/vi/QXeYVV1zcUc/mqdefault.jpg",
-                "width": 320,
-                "height": 180
-              },
-              "high": {
-                "url": "https://i.ytimg.com/vi/QXeYVV1zcUc/hqdefault.jpg",
-                "width": 480,
-                "height": 360
-              }
-            },
-            "channelTitle": "gigi",
-            "liveBroadcastContent": "none",
-            "publishTime": "2024-07-30T21:53:06Z"
-          }
-        }
-      },
-      {
         "id": "v2",
         "title": "The Horse and The Infant | Epic: the musical Animatic (FLASH WARNING)",
         "youtube": "https://www.youtube.com/watch?v=OE8TQBqWVV8",

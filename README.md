@@ -1,3 +1,16 @@
+# This is the code behind the player
+
+If you want to make an pull request for correcting some data:
+Here is all the data: https://github.com/spidfire/epic-player/blob/main/src/components/chaptersData.json
+
+
+
+
+
+
+
+# See the instructions below if you want to run this player localy
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
