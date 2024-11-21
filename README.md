@@ -4,7 +4,7 @@ If you want to make an pull request for correcting some data:
 Here is all the data: https://github.com/spidfire/epic-player/blob/main/src/components/chaptersData.json
 
 Have any suggestions and no Github skills?
-send a mail to suggestion <at> epicmusical.online
+send a mail to suggestion < at > epicmusical < dot > online
 
 
 
