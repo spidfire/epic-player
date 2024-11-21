@@ -33,8 +33,6 @@ export function Chapter({ title, variations, activeVariation, onSelectVariation 
               title={variation.title}
               thumbnailSrc={variation.thumbnailSrc}
               author={variation.author}
-              startTime={variation.startTime}
-              endTime={variation.endTime}
               isActive={variation.id === activeVariation}
               onSelect={() => onSelectVariation(variation.id)}
             />
