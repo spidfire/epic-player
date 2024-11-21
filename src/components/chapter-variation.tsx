@@ -5,13 +5,11 @@ interface ChapterVariationProps {
   title: string
   thumbnailSrc: string
   author: string
-  startTime: string
-  endTime: string
   onSelect: () => void
   isActive: boolean
 }
 
-export function ChapterVariation({ title, thumbnailSrc, author, startTime, endTime, onSelect, isActive }: ChapterVariationProps) {
+export function ChapterVariation({ title, thumbnailSrc, author, onSelect, isActive }: ChapterVariationProps) {
   return (
     <HoverCard>
       <HoverCardTrigger asChild>
