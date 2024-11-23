@@ -14,15 +14,22 @@ interface Variation {
 
 interface ChapterProps {
   title: string
+  isHighlighted: boolean
   variations: Variation[]
   activeVariation: string
   onSelectVariation: (variationId: string) => void
 }
 
-export function Chapter({ title, variations, activeVariation, onSelectVariation }: ChapterProps) {
+export function Chapter({ title, variations, activeVariation,isHighlighted, onSelectVariation }: ChapterProps) {
   return (
-    <div className="">
-      <h3 className="text-lg font-semibold mt-2">{title}</h3>
+    <div className={`${isHighlighted && 'bg-slate-800'}`}>
+      {isHighlighted ? 
+    
+      <h3 className="text-lg w-96 font-semibold mt-2 text-blue-500">{title}</h3>
+      : 
+      <h3 className="text-lg w-96 font-semibold mt-2">{title}</h3>
+    
+    }
       <ScrollArea className="w-96 ">
         <div className="flex space-x-4 pb-1">
           {variations

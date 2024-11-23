@@ -21,7 +21,24 @@ export function VideoInterface() {
     if (variant && variant.youtube) {
       setVideoSrc(variant.youtube)
     }
+    setShowResults(false)
+
+    window.location.hash = `#${chapterId}/${variationId}`
   }
+
+  // on load get the seed from session storage and sort the chapters
+  useEffect(() => {
+    if (window) { 
+      const regex = /#([^/]+)\/([^/]+)/
+      const match = window.location.hash.match(regex)
+      if (match) {
+        const chapterId = match[1]
+        const variationId = match[2]
+        handleSelectVariation(chapterId, variationId)
+      }
+  
+    }
+  }, []);
 
   
   const [sortedChapters, updateChapters] = useState<ChapterData[]>([]);
@@ -59,19 +76,26 @@ export function VideoInterface() {
     }
 }, []);
   
-
+const [showResults, setShowResults] = React.useState(true)
+const onClick = () => setShowResults(!showResults)
   return (
-    <div className="flex h-screen">
-      <div className="flex-grow">
+    <div className="h-dvh">
+      <div className="abolute h-dvh">
         <VideoPlayer src={videoSrc} />
+        <i className='absolute right-2 top-2 w-10 w-10 bg-white p-1 cursor-pointer' onClick={onClick}>
+          <img src="bars-solid.svg" alt="bars" />
+        </i>
       </div>
-      <div className="w-96 border-l bg-black text-white">
-        <Sidebar
+      <div style={{display: showResults? "block" : "none", maxWidth: '70vw'}} className="fixed p-2 right-0 top-0 bottom-0 w-96 border-l bg-black text-white" >
+        <div className="relative w-10 w-10   cursor-pointer" style={{left: '-60px', height: 0}} onClick={() => setShowResults(false)}>
+        <img src="bars-solid.svg" alt="bars" className='bg-white p-1 ' />
+        </div>
+      <Sidebar
           chapters={sortedChapters}
           activeChapter={activeChapter}
           activeVariation={activeVariation}
           onSelectVariation={handleSelectVariation}
-        />
+        /> 
       </div>
     </div>
   )
