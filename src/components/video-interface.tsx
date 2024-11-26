@@ -24,6 +24,16 @@ export function VideoInterface() {
     setShowResults(false)
 
     window.location.hash = `#${chapterId}/${variationId}`
+
+    try {
+      // @ts-expect-error because gtag is not defined in the standard but is available in the browser
+      window.gtag('event', `${chapterId}/${variationId}`, {
+        'chapter': chapter?.title,
+        'variation': variant?.title,
+      });
+    } catch (e) {
+      console.error('gtag not defined', e)
+    }
   }
 
   // on load get the seed from session storage and sort the chapters

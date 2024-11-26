@@ -18,6 +18,16 @@ export const metadata: Metadata = {
   description: "Play the animatics for EPIC: The Musical",
 };
 
+const googleTags = `
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V247GQ4GHD');
+
+`
+
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -29,6 +39,10 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-V247GQ4GHD"></script>
+        <script>{googleTags}</script>
+        
       </body>
     </html>
   );
