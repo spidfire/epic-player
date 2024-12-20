@@ -1,4 +1,5 @@
 import React from 'react'
+import logo from './../app/logo-cut.png'
 
 interface VideoPlayerProps {
   src: string
@@ -27,6 +28,8 @@ export function VideoPlayer({ src }: VideoPlayerProps) {
     <div className="w-full h-full bg-black text-white">
       <div className="w-full h-full flex items-center justify-center" >
         <div className='inline'>
+          <center>
+          <img src={logo.src} alt="logo" className='w-48' />
           <h1 className='text-xl mb-4'>Welcome to the EPIC: The Musical video player</h1>
           <p className='text-lg mb-4'>Select a video on the right -&gt;&gt;</p>
           <p>
@@ -34,6 +37,8 @@ export function VideoPlayer({ src }: VideoPlayerProps) {
             With videos from the community<br/>
             <a className='underline' target='_blank' href='https://github.com/spidfire/epic-player'>Github code</a>
           </p>
+          
+          </center>
         </div>
       </div>
     </div>

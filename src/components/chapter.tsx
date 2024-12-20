@@ -7,6 +7,8 @@ interface Variation {
   title: string
   thumbnailSrc: string
   author: string
+  channelId: string
+  publishTime: string
   startTime: string
   endTime: string
   sort: number
@@ -33,13 +35,15 @@ export function Chapter({ title, variations, activeVariation,isHighlighted, onSe
       <ScrollArea className="w-96 ">
         <div className="flex space-x-4 pb-1">
           {variations
-            .sort((a, b) => a.sort - b.sort)
             .map((variation) => (
             <ChapterVariation
               key={variation.id}
               title={variation.title}
+              date={formatDate(variation.publishTime)}
+              isNew={isNew(variation.publishTime)}
               thumbnailSrc={variation.thumbnailSrc}
               author={variation.author}
+              channelId={variation.channelId}
               isActive={variation.id === activeVariation}
               onSelect={() => onSelectVariation(variation.id)}
             />
@@ -49,5 +53,17 @@ export function Chapter({ title, variations, activeVariation,isHighlighted, onSe
       </ScrollArea>
     </div>
   )
+}
+
+function isNew(date: string): boolean{
+  const d = new Date(date);
+  const now = new Date();
+  return now.getTime() - d.getTime() < (30* 24 * 60 * 60 * 1000);
+}
+
+function formatDate(date: string): string{
+  const d = new Date(date);
+  return d.toLocaleDateString() + " " + d.toLocaleTimeString();
+
 }
 
