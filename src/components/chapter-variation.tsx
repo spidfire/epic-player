@@ -52,7 +52,7 @@ export function ChapterVariation({ title, thumbnailSrc,channelId, author,date,is
 
 function decodeHtmlEntities(str: string): string {
   // Define a mapping for common named entities.
-  const entities = {
+  const entities: Record<string, string> = {
       'quot': '"',
       'apos': "'",
       'amp': '&',
